@@ -4,22 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/css/styles-for-messages.css">
 </head>
 <body>
-    <h1><%=user%> CHAT WITH <%=name%> </h1>
-    <form action="/chat/<%=name%>" method="post">
-        <input type="text" name="message">
-        <input type="submit" value="send">
-    </form>
-    <%  for(var i=0;i<result.length;i++) {%>
-        <hr>
-        <% if(result[i].person1==user) {%>
-        <p1><%=result[i].message%></p1><br>
-        <% }%>
-        <% if(result[i].person2==user){%>
-        <p2>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<%=result[i].message%></p2><br>
-
-        <% }%>
-    <% } %>
+    <div class="messagebox">
+        <h5><%=user%>'s</h5> 
+        <h1>Chat with <%=name%> </h1>
+        <form action="/chat/<%=name%>" method="post">
+            <input type="text" name="message">
+            <input type="submit" value="send">
+        </form>
+        <button onclick="location.reload()">Check new messages!</button>
+        <%  for(var i=0;i<result.length;i++) {%>
+            <% if(result[i].person1==user) {%>
+                <div class="p1-container">
+                    <p class="p1"><%= result[i].message %></p>
+                </div>         
+                <% }%>
+            <% if(result[i].person2==user&&result[i].message!=''){%>
+                <div class="p2-container">
+                    <p class="p2"><%= result[i].message %></p>
+                </div>
+            <% }%>
+        <% } %>
+    </div>
+    
 </body>
 </html>

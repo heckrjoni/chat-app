@@ -1,26 +1,105 @@
+<!-- chat.ejs -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="styles.css" />
+    <style>
+        /* styles.css */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+}
 
+h1 {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.box {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+form input[type="text"] {
+  width: 70%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  margin-right: 10px;
+}
+
+form input[type="submit"] {
+  padding: 10px 16px;
+  font-size: 16px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+p {
+  color: red;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  margin-bottom: 10px;
+}
+
+ul li a {
+  display: block;
+  padding: 10px;
+  background-color: #f0f0f0;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+ul li a:hover {
+  background-color: #e0e0e0;
+}
+h3{
+    text-align: center;
+}
+
+    </style>
 </head>
 <body>
-    <h1><%=user%>'s chat</h1>
+    <h1><%= user %>'s chat</h1>
     <div class="box">
-        <form action="/<%=user%>" method="post"> 
-            <input type="text" name="newName">
-            <input type="submit">
+        <form action="/<%= user %>" method="post"> 
+            <input type="text" name="newName" placeholder="Enter a username">
+            <input type="submit" value="Submit">
         </form>
-        <% if(flag) {%>
-            <p>this user doesn't exist...</p>
-        <%}%>
+        <h3>Friends</h3>
+        <% if (flag) { %>
+            <p>This user doesn't exist...</p>
+        <% } %>
         <ul>
-            <% for(var i=0;i<friends.length;i++) {%>
-            <li><a href="/chat/<%=friends[i]%>"><%=friends[i]%></a></li>
-            <%}%>
+            <% for (var i = 0; i < friends.length; i++) { %>
+                <li><a href="/chat/<%= friends[i] %>"><%= friends[i] %></a></li>
+            <% } %>
         </ul>
     </div>
 </body>

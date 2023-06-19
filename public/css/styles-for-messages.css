@@ -1,0 +1,84 @@
+/* styles-for-messages.css */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ccabab;
+  margin: 0;
+  padding: 0;
+}
+
+.messagebox {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+form {
+  margin-bottom: 20px;
+}
+
+form input[type="text"] {
+  width: 80%;
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+form input[type="submit"] {
+  padding: 8px 16px;
+  font-size: 16px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+.p1-container {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.p1 {
+  font-size: 16px;
+  margin: 8px 0 2px 0; /* Update the margin values */
+  background-color: #c0ddf0; /* Light blue background color */
+  padding: 5px 10px; /* Adjust padding as needed */
+  border-radius: 4px;
+}
+
+.p2-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.p2 {
+  font-size: 16px;
+  margin: 5px 0;
+  background-color: #d0f0c0; /* Light green background color */
+  padding: 5px 10px; /* Adjust padding as needed */
+  border-radius: 4px;
+}
+
+button {
+  padding: 8px 16px;
+  font-size: 16px;
+  background-color: #2196f3;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}

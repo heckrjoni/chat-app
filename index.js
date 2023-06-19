@@ -7,7 +7,6 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static("public"));
 
-
 var friends=[]
 var user;
 var flag=0;
