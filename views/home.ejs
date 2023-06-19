@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+
+</head>
+<body>
+    <h1><%=user%>'s chat</h1>
+    <div class="box">
+        <form action="/<%=user%>" method="post"> 
+            <input type="text" name="newName">
+            <input type="submit">
+        </form>
+        <% if(flag) {%>
+            <p>this user doesn't exist...</p>
+        <%}%>
+        <ul>
+            <% for(var i=0;i<friends.length;i++) {%>
+            <li><a href="/chat/<%=friends[i]%>"><%=friends[i]%></a></li>
+            <%}%>
+        </ul>
+    </div>
+</body>
+</html>
